@@ -9,6 +9,19 @@ class User
     private $actif;
 
     //méthodes
+    public function __construct($pseudo, $email, $signature) 
+    {
+        $this->pseudo = $pseudo;
+        $this->email = $email;
+        $this->signature = $signature;
+        $this->actif = true;
+    }
+    public function __destruct() 
+    {
+        echo "Destruct  de " . $this->pseudo . " !";
+    }
+
+
 
     public function getPseudo()
     {
@@ -25,10 +38,7 @@ class User
 
     
 
-    public function envoyerEmail ($titre, $message)
-    {
-        mail($this->email, $titre, $message);
-    }
+    
     public function setEmail($newEmail)
     {
         if (!empty($newEmail) and strlen($newEmail) < 100 ) {
@@ -36,5 +46,14 @@ class User
         } else {
             echo" <p> L'email est trop court où trop long </p> ";
         }
+    }
+    public function envoyerEmail ($titre, $message)
+    {
+        return mail($this->email, $titre, $message);
+    }
+    public function bloquer() 
+    {
+        $this->actif = false;
+        $this->envoyerEmail("Alert user !", "Vous étes bloqué !");
     }
 }

@@ -19,9 +19,13 @@
 
     include_once("verification.class.php");
 
-    $RIB1= new RIBValidator("3004","0543","196thu895a","64");
+    $RIB1= new RIBValidator("30024","21543","196thu895a","38");
     my_var_dump($RIB1);
-    $RIB1->isValid();
+    if ($RIB1->isValid()) {
+        echo "<p> Ce rib est valide </p>";
+    }else {
+        echo "<p> Ce rib est invalide </p>";
+    };
     $RIB1->afficherRIB();
 
     ?>

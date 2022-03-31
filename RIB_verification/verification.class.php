@@ -21,7 +21,6 @@ class RIBValidator
                     'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
                     '12345678912345678923456789');
         $key = 97 - ((89 * $this->bankCode + 15 * $this->agencyCode + 3 * $account) % 97);
-
         return $key === $this->ribKey;
     }
 

@@ -54,6 +54,7 @@
         include_once("admin.class.php"); 
         $admin1 = new Admin("Admin1","admin1@mail.com","ADMIN");
         my_var_dump($admin1);
+        $admin1->supprimerUser($user2);
     ?>
 </body>
 </html>

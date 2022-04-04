@@ -14,11 +14,11 @@ include_once("class/verifRIB.class.php");
 $RIB1= new RIBValidator( $_POST["bankCode"],$_POST["agencyCode"],$_POST["accountNumber"],$_POST["ribKey"]);
     // my_var_dump($RIB1);
     if ($RIB1->isValid()) {
-// on affiche aucun contenu avant header location donc aucun var_dump header location controleur ou traitement aveugle
-        header("Location: index.php?success");
+        // on affiche aucun contenu avant header location donc aucun var_dump header location controleur ou traitement aveugle
+        header("Location: index.php?notif=ok");
         exit;
     }else {
-        header("Location: index.php?erreur");
+        header("Location: index.php?notif=nok");
         exit;
     };
     // $RIB1->afficherRIB();

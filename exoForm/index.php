@@ -4,16 +4,42 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>formulaire</title>
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 </head>
 <body>
+    <div class="container">
+        <?php
+            if (isset($_GET["notif"])) {
+                switch ($_GET["notif"]) {
+                    case "ok": ?>
 
-    <?php if (isset($_GET["erreur"])) { 
-            echo "Désolé votre rib est faux!"; 
-    } ?>
-    <?php if (isset($_GET["success"])) { 
-            echo "le formulaire a été enregistré!"; 
-    } ?>
+                        <div class="alert alert-success" role="alert">
+                            RIB valide !
+                        </div>
+
+                        <?php
+                        break;
+
+                    case "nok": ?>
+
+                        <div class="alert alert-danger" role="alert">
+                            RIB non valide !
+                        </div>
+
+                        <?php
+                        break;
+
+                    default: ?>
+
+                        <div class="alert alert-warning" role="alert">
+                            Paramètre étrange !
+                        </div>
+
+                    <?php
+                }
+            }                    
+        ?>
 
     <h1> Formulaire de contact </h1>
 

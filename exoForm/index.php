@@ -21,19 +21,19 @@
 
         <div>
             <label for="bankCode"> Code de la banque </label>
-            <input type="text" id="bankCode" name="bankCode" placeholder="12345" pattern="[0-9]{5}" required>
+            <input type="text" id="bankCode" name="bankCode" placeholder="12345" pattern="[0-9]{5}" maxlength="5"  required>
         </div>
         <div>
             <label for="agencyCode"> Code guichet </label>
-            <input type="text" id="agencyCode" name="agencyCode" placeholder="12345" pattern="[0-9]{5}" required>
+            <input type="text" id="agencyCode" name="agencyCode" placeholder="12345" pattern="[0-9]{5}" maxlength="5" required>
         </div>
         <div>
             <label for="accountNumber"> numéro de compte </label>
-            <input type="text" id="accountNumber" name="accountNumber" placeholder="12345abcde" pattern="[0-9A-Za-z]{10}" required>
+            <input type="text" id="accountNumber" name="accountNumber" placeholder="12345abcdef" pattern="[0-9A-Za-z]{11}" maxlength="11" required>
         </div>
         <div>
             <label for="ribKey"> clé du rib </label>
-            <input type="text" id="ribKey" name="ribKey" placeholder="70" pattern="[0-9]{2}" required>
+            <input type="text" id="ribKey" name="ribKey" placeholder="70" pattern="[0-9]{2}" maxlength="2" required>
 
             <button type="submit">Envoyer</button>
 
